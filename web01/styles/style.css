@@ -64,3 +64,10 @@ nav a:hover{
     border-radius: 10px;
 }
 
+.card img {
+    width: 100%;  /* Obrázek se roztáhne na 100% šířky rodičovského prvku */
+    height: auto; /* Výška se přizpůsobí šířce */
+    object-fit: cover; /* Zajistí, že obrázek bude pokrývat celý prostor */
+    border-radius: 10px; /* Zaoblené rohy jako u ostatních prvků */
+}
+
