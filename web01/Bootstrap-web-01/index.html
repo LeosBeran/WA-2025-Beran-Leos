@@ -13,19 +13,97 @@
 <nav>
     <div class="container">
         <a href="#">Bootstrap Example Page</a>
-        <a href="#">Tlačítka</a>
-        <a href="#">Karty</a>
-        <a href="#">Tabulky</a>
+        <a href="#buttons">Tlačítka</a>
+        <a href="#cards">Karty</a>
+        <a href="#tables">Tabulky</a>
     </div>
 </nav>
+<header>
+    <h1>Vítejte na mé stránce o toolkitu Bootstrap</h1>
+    <p>Budu zde prezentovat vybrané komponenty</p>
+    <a href="#buttons" class="btn btn-info btn-lg">Začít</a>
+</header>
+
+<!--Tlačítka-->
+<section class="container" id="buttons">
+    <h2>Tlačítka</h2>
+    <p>Bootstrap umožňuje snadné stylování tlačítek pomocí tříd jako např. <code>btn-primary</code></p>
+
+<!--Ukázka tlačítek-->
+<div>
+            
+    <button class="btn btn-primary">Primary button</button>
+    <button class="btn btn-warning">Warning button</button>
+</div>
+
+
+<!--Kód tlačítek-->
+<pre>
+    <code>
+        &lt;button class="btn btn-primary"&gt; button&lt;/button&gt;
+        &lt;button class="btn btn-warning"&gt; button&lt;/button&gt;
+    </code>
+</pre>
+
+</section>
+
+<!--Karty-->
+<section class="container" id="cards">
+<h2>Karty</h2>
+<p>Karta v bootstrapu je super způsob jak strukturovat obsah</p>
+
+<!--Ukázka karet-->
+<div class="card mx-auto">
+    <div class="card-body">
+        <h3 class="card-title">Ukázková karta</h3>
+        <p class="card-text">Toto je ukázka karty v bootstrapu</p>
+        <a href="#" class="btn btn-info">více</a>
+    </div>
+</div>
 
 
 
 
+</section>
 
+<!--Tabulky-->
+<section class="container" id="tables">
+    <h2>Tabulky</h2>
+    <p>Tabulky lze v bootsrapu stylovat pomocí tříd jako např. <code>tabl-stripped</code></p>
 
+<!--Ukázka tabulky-->
+    
+    <table class="table table-striped table-info">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Jméno</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Jan Novák</td>
+                <td>jan.novak@tul.cz</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jana Nováková</td>
+                <td>jana.novakova@tul.cz</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Karel Hynek</td>
+                <td>karel.hynek@tul.cz</td>
+            </tr>
+        </tbody>
+    </table>
 
+<!--Ukázka kódu tabulky-->
 
+</section>
+    
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
