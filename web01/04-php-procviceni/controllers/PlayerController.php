@@ -14,7 +14,7 @@ class PlayerController {
 
     public function createPlayer() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = htmlspecialchars($_POST['name']);
+            $lastname = htmlspecialchars($_POST['lastname']);
             $club = htmlspecialchars($_POST['club']);
             $position = htmlspecialchars($_POST['position']);
             $born = intval($_POST['born']);
@@ -38,7 +38,7 @@ class PlayerController {
 
 
             // Uložení knihy do DB - dočasné řešení, než budeme mít výpis knih
-            if ($this->playerModel->create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $imagePaths)) {
+            if ($this->playerModel->create($lastname, $club, $position, $born, $price, $nationality, $imagePaths)) {
                 header("Location: ../controllers/players_list.php");
                 exit();
             } else {
@@ -49,7 +49,7 @@ class PlayerController {
 
     public function listPlayers() {
         $players = $this->playerModel->getAll();
-        include '../views/books/books_list.php';
+        include '../views/players/players_list.php';
     }
 }
 

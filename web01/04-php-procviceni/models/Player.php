@@ -7,18 +7,18 @@ class Player {
         $this->db = $db;
     }
 
-    public function create($name, $club, $position, $born, $nationality, $images) {
+    public function create($lastname, $club, $position, $born, $price, $nationality, $images) {
         
         // Dvojtečka označuje pojmenovaný parametr => Místo přímých hodnot se používají placeholdery.
         // PDO je pak nahradí skutečnými hodnotami při volání metody execute().
         // Chrání proti SQL injekci (bezpečnější než přímé vložení hodnot).
-        $sql = "INSERT INTO players (name, club, position, born, price, nationality,images) 
-                VALUES (:name, :club, :position, :born, :price, :nationality, :images)";
+        $sql = "INSERT INTO players (lastname, club, position, born, price, nationality,images) 
+                VALUES (:lastname, :club, :position, :born, :price, :nationality, :images)";
         
         $stmt = $this->db->prepare($sql);
         
         return $stmt->execute([
-            ':name' => $name,
+            ':lastname' => $lastname,
             ':club' => $club,
             ':position' => $position,
             ':born' => $born,

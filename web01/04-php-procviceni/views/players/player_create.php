@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../views/books/player_create.php">Přidat hráče</a>
+                            <a class="nav-link" href="../../views/players/player_create.php">Přidat hráče</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../../controllers/players_list.php">Výpis hráčů</a>
@@ -42,33 +42,33 @@
                         <form action="../../controllers/PlayerController.php" method="post" enctype="multipart/form-data">
                             
                             <div class="mb-3">
-                                <label for="title" class="form-label">Jméno hráče: <span class="text-danger">*</span></label>
-                                <input type="text" id="name" name="name" class="form-control" required>
+                                <label for="title" class="form-label">Přijmení hráče: <span class="text-danger">*</span></label>
+                                <input type="text" id="lastname" name="lastname" class="form-control" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="author" class="form-label">Klub: <span class="text-danger">*</span></label>
-                                <input type="text" id="author" name="author" class="form-control" required>
+                                <input type="text" id="club" name="club" class="form-control" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="category" class="form-label">Pozice:</label>
-                                <input type="text" id="category" name="category" class="form-control">
+                                <input type="text" id="position" name="position" class="form-control">
                             </div>
 
                             <div class="mb-3">
                                 <label for="subcategory" class="form-label">Rok narození:</label>
-                                <input type="text" id="subcategory" name="subcategory" class="form-control">
+                                <input type="number" id="born" name="born" class="form-control">
                             </div>
 
                             <div class="mb-3">
                                 <label for="year" class="form-label">Cena: <span class="text-danger">*</span></label>
-                                <input type="number" id="year" name="year" class="form-control" required>
+                                <input type="number" id="price" name="price" class="form-control" required>
                             </div>
 
                             <div class="mb-3">
                                 <label for="price" class="form-label">Národnost: <span class="text-danger">*</span></label>
-                                <input type="number" id="price" name="price" class="form-control" step="0.01" required>
+                                <input type="text" id="nationality" name="nationality" class="form-control" step="0.01" required>
                             </div>
 
                             <div class="mb-3">
