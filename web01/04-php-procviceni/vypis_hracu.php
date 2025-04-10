@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../players/player_create.php">Přidat hráče</a>
+                            <a class="nav-link" href="../../views/players/player_create.php">Přidat hráče</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="../../controllers/players_list.php">Výpis hráčů</a>
