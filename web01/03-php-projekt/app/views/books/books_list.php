@@ -51,6 +51,7 @@
                 </div>
             </div>
         </nav>
+        
         <h2>Výpis knih</h2>
          <?php if(!empty($books)): ?>
             <!-- <h3>Hrubý výpis knih</h3> -->
