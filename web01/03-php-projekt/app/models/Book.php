@@ -32,6 +32,7 @@ class Book {
             ':user_id' => $user_id
         ]);
     }
+
     public function getAll() {
         $sql = "SELECT * FROM books ORDER BY created_at DESC";
         $stmt = $this->db->prepare($sql);

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../models/Database.php';
 require_once '../models/Book.php';
 
@@ -13,6 +15,12 @@ class BookController {
     }
 
     public function createBook() {
+        // Kontrola, jestli je uživatel přihlášen
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: ../controllers/book_list.php");
+            exit();
+        }
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $title = htmlspecialchars($_POST['title']);
             $author = htmlspecialchars($_POST['author']);
@@ -23,6 +31,9 @@ class BookController {
             $isbn = htmlspecialchars($_POST['isbn']);
             $description = htmlspecialchars($_POST['description']);
             $link = htmlspecialchars($_POST['link']);
+
+            // Získání ID přihlášeného uživatele
+            $user_id = $_SESSION['user_id'];
 
             // Zpracování nahraných obrázků
             $imagePaths = [];
@@ -38,10 +49,12 @@ class BookController {
                 }
             }
 
-
-            // Uložení knihy do DB - dočasné řešení, než budeme mít výpis knih
-            if ($this->bookModel->create($title, $author, $category, $subcategory, $year, $price, $isbn, $description, $link, $imagePaths)) {
-                header("Location: ../controllers/books_list.php");
+            // Uložení knihy do DB včetně user_id
+            if ($this->bookModel->create(
+                $title, $author, $category, $subcategory, $year,
+                $price, $isbn, $description, $link, $imagePaths, $user_id
+            )) {
+                header("Location: ../controllers/book_list.php");
                 exit();
             } else {
                 echo "Chyba při ukládání knihy.";
@@ -49,12 +62,16 @@ class BookController {
         }
     }
 
-    public function listBooks() {
+    public function listBooks () {
         $books = $this->bookModel->getAll();
-        include '../views/books/books_list.php';
+        include '../views/books/book_list.php';
     }
 }
 
 // Volání metody při odeslání formuláře
 $controller = new BookController();
-$controller->createBook();
+
+// Zavolá pouze pokud šlo o POST request (odeslání formuláře)
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $controller->createBook();
+}

@@ -1,4 +1,3 @@
-
 <?php
 require_once '../../models/Database.php';
 require_once '../../models/Book.php';
@@ -54,8 +53,9 @@ if (isset($_GET['edit'])) {
                 </div>
             </div>
         </nav>
+
         <?php if ($editMode): ?>
-        <div class="row justify-content-center mt-5">
+            <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-primary text-white text-center">
@@ -116,10 +116,10 @@ if (isset($_GET['edit'])) {
                             <button type="submit" class="btn btn-success w-100">Uložit změny</button>
                         </form>
                     </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    <?php endif; ?>
+        <?php endif; ?>
 
         <h2>Výpis knih</h2>
         <?php if (!empty($books)): ?>
