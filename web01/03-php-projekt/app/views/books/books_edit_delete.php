@@ -49,6 +49,23 @@ if (isset($_GET['edit'])) {
                         <li class="nav-item">
                             <a class="nav-link" href="#">Výpis knih</a>
                         </li>
+                        <ul class="navbar-nav ms-auto">
+                        <?php if (isset($_SESSION['username'])): ?>
+                            <li class="nav-item">
+                                <span class="nav-link text-white">Přihlášen jako: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../controllers/logout.php">Odhlásit se</a>
+                            </li>
+                        <?php else: ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../views/auth/login.php">Přihlášení</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../views/auth/register.php">Registrace</a>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
                     </ul>
                 </div>
             </div>
@@ -134,6 +151,7 @@ if (isset($_GET['edit'])) {
                         <th>Cena</th>
                         <th>ISBN</th>
                         <th>Akce</th>
+                        <th>user ID</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -146,6 +164,7 @@ if (isset($_GET['edit'])) {
                         <td><?= htmlspecialchars($book['year']) ?></td>
                         <td><?= number_format($book['price'], 2, ',', ' ') ?> Kč</td>
                         <td><?= htmlspecialchars($book['isbn']) ?></td>
+                        <td><?= htmlspecialchars($book['user_id']) ?></td>
                         <td>
                             <a href="?edit=<?= $book['id'] ?>" class="btn btn-sm btn-primary">Upravit</a>
                             <a href="../../controllers/book_delete.php?id=<?= $book['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Opravdu chcete smazat tuto knihu?');">Smazat</a>

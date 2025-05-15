@@ -30,12 +30,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Výpis knih</a>
                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="../views/books/books_edit_delete">Editace a mazání</a>
+                        </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         <?php if (isset($_SESSION['username'])): ?>
                             <li class="nav-item">
                                 <span class="nav-link text-white">Přihlášen jako: <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></span>
                             </li>
+                            <?php endif; ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="../controllers/logout.php">Odhlásit se</a>
                             </li>
